@@ -54,7 +54,7 @@ Read more about [user/group Pages][userpages] and [project Pages][projpages].
 
 If you forked this project for your own use, please go to your project's
 **Settings** and remove the forking relationship, which won't be necessary
-unless you want to contribute back to the upstream project.
+unless you want to contribute back to the upstream project. -test
 
 ## Troubleshooting
 
