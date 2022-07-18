@@ -12,3 +12,20 @@ if (nv.winHeight > 600 && nv.winWidth > 1280) {
     height: leftHeight - 30,
   });
 }
+
+$(".menu-item").on("click", function () {
+  /* const navLink = this.attr('data-id');
+  const parentLi = $(this); */
+
+  const navLink = $(this).attr("data-id");
+  $(document)
+    .find("[data-id=" + navLink + "]")
+    .addClass("active")
+    .siblings()
+    .removeClass("active");
+  $(document)
+    .find(".card_details_content." + navLink + "")
+    .show()
+    .siblings()
+    .hide();
+});

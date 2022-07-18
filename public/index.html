@@ -17,25 +17,25 @@
   <div class="container">
     <header class="header">
       <ul class="top-menu">
-        <li class="active">
+        <li class="menu-item active" data-id="about">
           <a href="javascript:void(0)" class="about">
             <span class="icon icon-user"></span>
             <span class="link">about</span>
           </a>
         </li>
-        <li class="">
+        <li class="menu-item" data-id="resume">
           <a href="javascript:void(0)" class="resume">
             <span class="icon icon-profile"></span>
             <span class="link">resume</span>
           </a>
         </li>
-        <li class="">
+        <li class="menu-item" data-id="portfolio">
           <a href="javascript:void(0)" class="portfolio">
             <span class="icon icon-briefcase"></span>
             <span class="link">portfolio</span>
           </a>
         </li>
-        <li class="">
+        <li class="menu-item" data-id="contact">
           <a href="javascript:void(0)" class="contact">
             <span class="icon icon-at"></span>
             <span class="link">contact</span>
@@ -80,7 +80,7 @@
             Download CV
             <span class="icon icon-download"></span>
           </a>
-          <a href="javascript:void(0)" class="bottom-link">
+          <a href="javascript:void(0)" class="bottom-link menu-item" data-id="contact">
             Contact Me
             <span class="icon icon-right"></span>
           </a>
@@ -95,15 +95,16 @@
             me
           </div>
           <div class="row content_row">
-            <div class="p-4 content_box col-md-6 col-12">
+            <div class="p-4 content_box col-12 col-md-6">
               <p>I am an enthusiastic and professional UI Designer, Front-end Developer who enjoys being part of, as well as leading,a successful and productive team. I am quick to grasp new ideas and concepts,and to develop innovative and creative solutions to problems.</p>
               <p>I am able to work well on my own initiative and can demonstrate the high levels of motivation required to meet the tightest of deadlines. Even under significant pressure, I possess a strong ability to perform effectively.</p>
             </div>
-            <div class="content_box p-3 p-md-4 mobile_top col-md-6 col-12">
+            <div class="content_box p-3 p-md-4 mobile_top col-12 col-md-6">
               <ul class="info">
                 <li>
                   <strong>Age . . . . . </strong>
-                  35
+                  <span id="dob"></span>
+                  <script>document.getElementById("dob").innerHTML = new Date().getFullYear() - 1986;</script>
                 </li>
                 <li>
                   <strong>Mobile . . . . . </strong>
@@ -131,7 +132,7 @@
             Services
           </div>
           <div class="row content_row">
-            <div class="p-4 content_box col-md-6 col-12">
+            <div class="p-4 content_box col-12 col-md-6">
               <div class="service_box">
                 <div class="service_icon">
                   <span class="icon icon-embed2"></span>
@@ -140,7 +141,7 @@
                 <div class="service_details">Modern and mobile-ready website that will help you reach all of your marketing.</div>
               </div>
             </div>
-            <div class="content_box mobile_top col-md-6 col-12">
+            <div class="content_box mobile_top col-12 col-md-6">
               <div class="service_box">
                 <div class="service_icon">
                   <span class="icon icon-design"></span>
@@ -203,14 +204,14 @@
           </div>
         </div>
       </div>
-      <div class="card_details_content">
+      <div class="card_details_content resume">
         <div class="content rsume">
           <div class="title">
             <span class="first-word">Resume</span>
           </div>
           <div class="row content_row">
-            <div class="p-4 content_box col-md-6 col-12">
-              <div class="resume text-left">
+            <div class="p-4 content_box col-12 col-md-6">
+              <div class="resume text-start">
                 <div class="resume_title">
                   <span class="icon icon-briefcase"></span>
                   Experience
@@ -249,8 +250,8 @@
                 </ul>
               </div>
             </div>
-            <div class="content_box col-md-6 col-12">
-              <div class="resume text-left">
+            <div class="content_box col-12 col-md-6">
+              <div class="resume text-start">
                 <div class="resume_title">
                   <span class="icon icon-education"></span>
                   Education
@@ -285,8 +286,8 @@
             Skills
           </div>
           <div class="row content_row">
-            <div class="p-4 content_box col-md-6 col-12">
-              <div class="resume text-left">
+            <div class="p-4 content_box col-12 col-md-6">
+              <div class="resume text-start">
                 <div class="resume_title">
                   <span class="icon icon-display"></span>
                   Design
@@ -317,8 +318,8 @@
                 </div>
               </div>
             </div>
-            <div class="content_box col-md-6 col-12">
-              <div class="resume text-left">
+            <div class="content_box col-12 col-md-6">
+              <div class="resume text-start">
                 <div class="resume_title">
                   <span class="icon icon-earth"></span>
                   Languages
@@ -370,8 +371,8 @@
                 </div>
               </div>
             </div>
-            <div class="p-4 content_box col-md-6 col-12">
-              <div class="resume text-left">
+            <div class="p-4 content_box col-12 col-md-6">
+              <div class="resume text-start">
                 <div class="resume_title">
                   <span class="icon icon-embed2"></span>
                   Coding
@@ -420,8 +421,8 @@
                 </div>
               </div>
             </div>
-            <div class="content_box col-md-6 col-12">
-              <div class="resume text-left">
+            <div class="content_box col-12 col-md-6">
+              <div class="resume text-start">
                 <div class="resume_title">
                   <span class="icon icon-earth"></span>
                   Knowledge
@@ -465,6 +466,386 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="card_details_content portfolio">
+        <div class="content rsume">
+          <div class="title">
+            <span class="first-word">Portfolio</span>
+          </div>
+          <div class="row content_row">
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/pappys-02.ce8e3e8b.gif');">
+                <h4 class="heading w-100">PAPPY'S NEST</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://nithinglobal.com/pappysNest/" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/pappys-02.ce8e3e8b.gif" alt="PAPPY'S NEST" id="webs_0" class="d-none portfolio-image">
+                <img src="img/pappys-01.9979d6e0.gif" alt="PAPPY'S NEST" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/impex-02.af45f072.gif');">
+                <h4 class="heading w-100">Translation ImpEx Creator</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://impex.nithinglobal.com/" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/impex-02.af45f072.gif" alt="Translation ImpEx Creator" id="webs_1" class="d-none portfolio-image">
+                <img src="img/impex-01.13b68c8e.gif" alt="Translation ImpEx Creator" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/vividDiagnostic-02.3cd15310.png');">
+                <h4 class="heading w-100">Vivid Diagnostic</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://nithinglobal.com/vividdiagnostic/" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/vividDiagnostic-02.3cd15310.png" alt="Vivid Diagnostic" id="webs_2" class="d-none portfolio-image">
+                <img src="img/vividDiagnostic-01.4dfd5417.png" alt="Vivid Diagnostic" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/beachplumvilla-02.f01619f5.png');">
+                <h4 class="heading w-100">Beach Plum Villa</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://www.beachplumvilla.com/" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/beachplumvilla-02.f01619f5.png" alt="Beach Plum Villa" id="webs_3" class="d-none portfolio-image">
+                <img src="img/beachplumvilla-01.1ab8cab4.png" alt="Beach Plum Villa" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/lsg-02.1bc90c4b.png');">
+                <h4 class="heading w-100">LSG</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="https://www.lsg.com/" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/lsg-02.1bc90c4b.png" alt="LSG" id="webs_4" class="d-none portfolio-image">
+                <img src="img/lsg-01.c7831bc5.png" alt="LSG" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/designfactory-02.1ac6b805.png');">
+                <h4 class="heading w-100">Design Factory Qatar</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://www.nithinglobal.com/designFactoryQatar" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/designfactory-02.1ac6b805.png" alt="Design Factory Qatar" id="webs_5" class="d-none portfolio-image">
+                <img src="img/designfactory-01.c6fdafc2.png" alt="Design Factory Qatar" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/vivid-02.abaf76cd.jpg');">
+                <h4 class="heading w-100">vivid</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://www.nithinglobal.com/vivid/" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/vivid-02.abaf76cd.jpg" alt="vivid" id="webs_6" class="d-none portfolio-image">
+                <img src="img/vivid-01.437b3188.jpg" alt="vivid" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/UniArk-02.c0b10000.jpg');">
+                <h4 class="heading w-100">UniArk</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://www.uniark.in/" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/UniArk-02.c0b10000.jpg" alt="UniArk" id="webs_7" class="d-none portfolio-image">
+                <img src="img/UniArk-01.eafa5bfd.jpg" alt="UniArk" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/dekazledesign-02.ab77f7ff.jpg');">
+                <h4 class="heading w-100">Dekazle</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://www.nithinglobal.com/dekazle/" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/dekazledesign-02.ab77f7ff.jpg" alt="Dekazle" id="webs_8" class="d-none portfolio-image">
+                <img src="img/dekazledesign-01.5038cd2d.jpg" alt="Dekazle" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/reviewmylegalbill-02.eb10e6a4.png');">
+                <h4 class="heading w-100">Review My Legal Bill</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://www.reviewmylegalbill.com/" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/reviewmylegalbill-02.eb10e6a4.png" alt="Review My Legal Bill" id="webs_9" class="d-none portfolio-image">
+                <img src="img/reviewmylegalbill-01.6322060b.png" alt="Review My Legal Bill" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/Patanjali-Divya-Yoga-02.d6d4ee45.png');">
+                <h4 class="heading w-100">Patanjali Divya Yoga</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://nithinglobal.com/patanjalidivyayoga" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/Patanjali-Divya-Yoga-02.d6d4ee45.png" alt="Patanjali Divya Yoga" id="webs_10" class="d-none portfolio-image">
+                <img src="img/Patanjali-Divya-Yoga-01.e35eef84.png" alt="Patanjali Divya Yoga" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/Ella-02.177ce6b3.jpg');">
+                <h4 class="heading w-100">Its Ella</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://www.itsella.com/index1.html" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/Ella-02.177ce6b3.jpg" alt="Its Ella" id="webs_11" class="d-none portfolio-image">
+                <img src="img/Ella-01.b86d79d0.jpg" alt="Its Ella" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/magrum-holidays-02.5e9da460.png');">
+                <h4 class="heading w-100">Magrum Holidays</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://nithinglobal.com/magrum-holidays/" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/magrum-holidays-02.5e9da460.png" alt="Magrum Holidays" id="webs_12" class="d-none portfolio-image">
+                <img src="img/magrum-holidays-01.7176cb62.png" alt="Magrum Holidays" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/newsletter-02.437d6e9f.png');">
+                <h4 class="heading w-100">Flip book</h4>
+                <h5 class="category w-100">Website</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                  <a href="http://nithinglobal.com/newsletter/" target="_blank">
+                    <i class="icon icon-link"></i>
+                  </a>
+                </div>
+                <img src="img/newsletter-02.437d6e9f.png" alt="Flip book" id="webs_13" class="d-none portfolio-image">
+                <img src="img/newsletter-01.0c39570c.png" alt="Flip book" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/praxiva-02.7e11bc3f.png');">
+                <h4 class="heading w-100">Praxiva</h4>
+                <h5 class="category w-100">Logo</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                </div>
+                <img src="img/praxiva-02.7e11bc3f.png" alt="Praxiva" class="d-none portfolio-image">
+                <img src="img/praxiva-01.7112a3b7.png" alt="Praxiva" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/ict-02.d8f0ebc1.png');">
+                <h4 class="heading w-100">ICT</h4>
+                <h5 class="category w-100">Logo</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                </div>
+                <img src="img/ict-02.d8f0ebc1.png" alt="ICT" class="d-none portfolio-image">
+                <img src="img/ict-01.cada6ad2.png" alt="ICT" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/kp-metrix-02.dffd6679.png');">
+                <h4 class="heading w-100">KP Metrix</h4>
+                <h5 class="category w-100">Logo</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                </div>
+                <img src="img/kp-metrix-02.dffd6679.png" alt="KP Metrix" class="d-none portfolio-image">
+                <img src="img/kp-metrix-01.c3726fa6.png" alt="KP Metrix" class="d-none">
+              </div>
+            </div>
+            <div class="portfolio-item col-12 col-md-6">
+              <div class="portfolio-wrapper d-flex align-content-center flex-wrap" style="background-image: url('img/panel-partnership-02.9bf79afa.png');">
+                <h4 class="heading w-100">Panel Partnership</h4>
+                <h5 class="category w-100">Logo</h5>
+                <div class="d-flex justify-content-center">
+                  <a href="javascript:void(0)">
+                    <i class="icon icon-images"></i>
+                  </a>
+                </div>
+                <img src="img/panel-partnership-02.9bf79afa.png" alt="Panel Partnership" class="d-none portfolio-image">
+                <img src="img/panel-partnership-01.46b60a23.png" alt="Panel Partnership" class="d-none">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card_details_content contact">
+        <div class="content about">
+          <div class="title">
+            <span class="first-word">Contact</span>
+            me
+          </div>
+          <div class="row content_row">
+            <div class="contact_map col-12">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.0847717920697!2d76.44427661483218!3d9.843247378414187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0877d2207c07c7%3A0x2b952cac5f6ba7a5!2sNithin+V!5e0!3m2!1sen!2sin!4v1545657159941" frameborder="0" allowfullscreen="allowfullscreen" style="border: 0px;"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="content service">
+          <div class="title">
+            <span class="first-word">Contact</span>
+            Form
+          </div>
+          <form class="w-100">
+            <div class="row content_row mt-4">
+              <div class="form_col col-md-6 col-12">
+                <fieldset id="name-group" class="form-group">
+                  <!---->
+                  <div tabindex="-1" role="group" class="bv-no-focus-ring">
+                    <input id="name" type="text" placeholder="Enter name" required="required" aria-required="true" class="form-control">
+                    <label for="name">Your name:</label>
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                </fieldset>
+              </div>
+              <div class="form_col col-md-6 col-12">
+                <fieldset id="email-group" class="form-group">
+                  <!---->
+                  <div tabindex="-1" role="group" class="bv-no-focus-ring">
+                    <input id="email" type="email" placeholder="Enter email" required="required" aria-required="true" class="form-control">
+                    <label for="email">Email address:</label>
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                </fieldset>
+              </div>
+              <div class="form_col col-md-6 col-12">
+                <fieldset id="phone-group" class="form-group">
+                  <!---->
+                  <div tabindex="-1" role="group" class="bv-no-focus-ring">
+                    <input id="phone" type="number" placeholder="Enter phone number" required="required" aria-required="true" maxlength="13" class="form-control">
+                    <label for="phone">Phone number:</label>
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                </fieldset>
+              </div>
+              <div class="form_col col-md-6 col-12">
+                <fieldset id="phone-group" class="form-group">
+                  <!---->
+                  <div tabindex="-1" role="group" class="bv-no-focus-ring">
+                    <input id="location" type="text" placeholder="Enter location" class="form-control">
+                    <label for="phone">Location:</label>
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                </fieldset>
+              </div>
+              <div class="form_col_big col-md-6 col-12">
+                <fieldset id="comment-group" class="form-group">
+                  <!---->
+                  <div tabindex="-1" role="group" class="bv-no-focus-ring">
+                    <textarea id="comment" placeholder="Enter comments" required="required" rows="2" wrap="soft" aria-required="true" class="form-control"></textarea>
+                    <label for="comment">Comments:</label>
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                </fieldset>
+              </div>
+              <div id="contactMsg" class="col-12">
+              </div>
+              <div class="text-end px-0 col-12">
+                <button type="reset" class="btn btn reset_btn btn-secondary">
+                  <span class="mobile_none">Reset</span>
+                  <i class="icon icon-spinner11"></i>
+                </button>
+                <button type="submit" class="btn btn send_btn">
+                  Send Message
+                  <i class="icon icon-right"></i>
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
