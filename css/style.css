@@ -1011,6 +1011,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    overflow: hidden;
     gap: 0;
   }
   .header {
