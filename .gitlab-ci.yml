@@ -3,8 +3,6 @@ stages:
 
 deploy:
   stage: deploy
-  before_script:
-    - sudo chown -R $USER:$USER /var/www/html
   script:
     - ssh pi@103.161.145.158 "cd /var/www/html && git pull origin master && sudo systemctl restart nginx"
   only:
