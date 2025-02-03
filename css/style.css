@@ -1007,7 +1007,7 @@ li {
 @media screen and (min-width: 768px) {
   .main-container {
     max-width: 1268px;
-    max-height: 680px;
+    max-height: 600px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -1047,6 +1047,7 @@ li {
   .card_middle {
     max-width: 420px;
     max-height: 600px;
+    margin-bottom: 0;
     order: 2;
   }
   .card_details {
