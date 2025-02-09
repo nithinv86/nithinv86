@@ -1,31 +1,29 @@
-nv.winHeight = $(window).height();
-nv.winWidth = $(window).width();
+// Get all sections and menu items
+const sections = document.querySelectorAll('.card_details_content');
+const menuItems = document.querySelectorAll('.menu-item');
+const cardDetails = document.querySelector('.card_details');
+const mainContainer = document.querySelector('.main-container');
 
-if (nv.winHeight > 600 && nv.winWidth > 1280) {
-  const containerWidth = $(".main-container").width();
-  const leftWidth = $(".card_middle").width();
-  const leftHeight = $(".card_middle").height();
+const scrollHandler = () => {
+  sections.forEach((section) => {
+    const scrollPosition = cardDetails.scrollTop || mainContainer.scrollTop;
+    const sectionTop = section.offsetTop - (cardDetails.offsetTop || mainContainer.offsetTop);
+    const sectionBottom = sectionTop + section.offsetHeight;
 
-  $(".card_details").css({
-    width: containerWidth - (leftWidth + 80),
-    left: leftWidth + 80,
-    height: leftHeight - 30,
+    // If section is at or past the 300px scroll mark
+    if (sectionTop && scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+      // Remove active class from all menu items
+      menuItems.forEach((item) => item.classList.remove('active'));
+
+      // Add active class to corresponding menu item
+      const sectionId = section.id;
+      const activeMenuItem = document.querySelector(
+        `.menu-item a[href="#${sectionId}"]`,
+      ).parentElement;
+      activeMenuItem.classList.add('active');
+    }
   });
-}
+};
 
-$(".menu-item").on("click", function () {
-  /* const navLink = this.attr('data-id');
-  const parentLi = $(this); */
-
-  const navLink = $(this).attr("data-id");
-  $(document)
-    .find("[data-id=" + navLink + "]")
-    .addClass("active")
-    .siblings()
-    .removeClass("active");
-  $(document)
-    .find(".card_details_content." + navLink + "")
-    .show()
-    .siblings()
-    .hide();
-});
+cardDetails.addEventListener('scroll', scrollHandler);
+mainContainer.addEventListener('scroll', scrollHandler);
