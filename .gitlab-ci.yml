@@ -13,7 +13,7 @@ deploy:
     - chmod 700 ~/.ssh
     - echo "Connecting to server"
     - ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
-    - ssh "$SSH_USER@$SSH_HOST" -C "
-      echo "Connected to server"
-      cd $SSH_PATH
-      git pull origin master"
+    - ssh "$SSH_USER@$SSH_HOST"
+    - echo "Connected to server"
+    - cd $SSH_PATH
+    - git pull origin master"
