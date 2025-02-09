@@ -6,20 +6,14 @@ deploy:
   only:
     - master
   script:
-    - echo "Start deploying..."
-    - 'which ssh-agent || (apt-get update -y && apt-get install openssh-client -y)'
+    - apt-get update -y && apt-get install openssh-client -y && apt-get install -y rsync
     - eval $(ssh-agent -s)
-    # Debug: Show SSH key being added
-    - echo "Adding SSH key..."
-    - echo "$SSH_PUBLIC_KEY" | tr -d '\r' | ssh-add - && echo "Key added successfully"
-    - mkdir -p /home/$SSH_USER/.ssh
-    - chmod 700 /home/$SSH_USER/.ssh
-    # Configure SSH
-    - echo -e "Host *\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > /home/$SSH_USER/.ssh/config
-    - chmod 600 /home/$SSH_USER/.ssh/config
-    # Debug: Show connection attempt
-    - echo "Attempting to connect to $SSH_USER@$SSH_HOST..."
-    - ssh -v -o StrictHostKeyChecking=no "$SSH_USER@$SSH_HOST" 
-    - "echo 'SSH connection successful'
-    - cd $SSH_PATH
-    - git pull origin master"
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "Connecting to server"
+    - ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
+    - ssh "$SSH_USER@$SSH_HOST" -C "
+      echo "Connected to server"
+      cd $SSH_PATH
+      git pull origin master"
