@@ -12,11 +12,11 @@ deploy:
     # Debug: Show SSH key being added
     - echo "Adding SSH key..."
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - && echo "Key added successfully"
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
+    - mkdir -p /home/$SSH_USER/.ssh
+    - chmod 700 /home/$SSH_USER/.ssh
     # Configure SSH
-    - echo -e "Host *\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > ~/.ssh/config
-    - chmod 600 ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > /home/$SSH_USER/.ssh/config
+    - chmod 600 /home/$SSH_USER/.ssh/config
     # Debug: Show connection attempt
     - echo "Attempting to connect to $SSH_USER@$SSH_HOST..."
     - ssh -v -o StrictHostKeyChecking=no "$SSH_USER@$SSH_HOST" "echo 'SSH connection successful' && cd $SSH_PATH && git pull origin master"
