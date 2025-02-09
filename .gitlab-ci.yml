@@ -12,9 +12,8 @@ deploy:
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
+    # Disable strict host key checking
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > ~/.ssh/config
+    - chmod 600 ~/.ssh/config
     - echo "Start pulling latest code..."
-    - ssh "$SSH_USER@$SSH_HOST" -C "
-      cd "$SSH_PATH";
-      git pull origin master;"
+    - ssh -o StrictHostKeyChecking=no "$SSH_USER@$SSH_HOST" "cd $SSH_PATH && git pull origin master"
