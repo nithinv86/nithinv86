@@ -1,18 +1,17 @@
 stages:
   - deploy
 
+before_script:
+  - mkdir -p ~/.ssh
+  - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
+
 deploy:
   stage: deploy
   only:
     - master
   script:
-    - apt-get update -y && apt-get install openssh-client -y && apt-get install -y rsync
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
-    - echo "Connecting to server"
-    - ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
     - ssh "$SSH_USER@$SSH_HOST"
     - echo "Connected to server"
     - cd $SSH_PATH
