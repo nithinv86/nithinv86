@@ -11,7 +11,7 @@ deploy:
     - eval $(ssh-agent -s)
     # Debug: Show SSH key being added
     - echo "Adding SSH key..."
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - && echo "Key added successfully"
+    - echo "$SSH_PUBLIC_KEY" | tr -d '\r' | ssh-add - && echo "Key added successfully"
     - mkdir -p /home/$SSH_USER/.ssh
     - chmod 700 /home/$SSH_USER/.ssh
     # Configure SSH
