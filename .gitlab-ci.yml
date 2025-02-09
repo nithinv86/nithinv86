@@ -12,7 +12,7 @@ deploy:
   only:
     - master
   script:
-    - ssh "$SSH_USER@$SSH_HOST"
+    - ssh -vvv "$SSH_USER@$SSH_HOST"
     - echo "Connected to server"
     - cd $SSH_PATH
     - git pull origin master"
