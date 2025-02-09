@@ -956,11 +956,14 @@ li {
     padding-bottom: 30px;
     min-height: 51px;
   }
-  .card_details_content .content:not(.price) .content_row .content_box:not(:nth-child(odd))::before,
   .card_details_content .content .content_row .content_box:not(:nth-child(odd))::before {
-    width: 1px;
-    height: 100%;
-    background: radial-gradient(ellipse at top, rgba(38, 38, 45, 0.2) 0%, rgba(38, 38, 45, 0) 75%);
+    width: 1px !important;
+    height: 100% !important;
+    background: radial-gradient(
+      ellipse at top,
+      rgba(38, 38, 45, 0.2) 0%,
+      rgba(38, 38, 45, 0) 75%
+    ) !important;
   }
 }
 
