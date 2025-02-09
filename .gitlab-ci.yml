@@ -19,4 +19,7 @@ deploy:
     - chmod 600 /home/$SSH_USER/.ssh/config
     # Debug: Show connection attempt
     - echo "Attempting to connect to $SSH_USER@$SSH_HOST..."
-    - ssh -v -o StrictHostKeyChecking=no "$SSH_USER@$SSH_HOST" "echo 'SSH connection successful' && cd $SSH_PATH && git pull origin master"
+    - ssh -v -o StrictHostKeyChecking=no "$SSH_USER@$SSH_HOST" 
+    - "echo 'SSH connection successful'
+    - cd $SSH_PATH
+    - git pull origin master"
