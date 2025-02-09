@@ -4,6 +4,6 @@ stages:
 deploy:
   stage: deploy
   script:
-    - ssh pi@103.161.145.158 "cd /var/www/html && git pull origin master && sudo systemctl restart nginx"
+    - ssh admin@103.161.145.158 "cd /var/www/html && git pull origin master && sudo systemctl restart nginx"
   only:
     - master
