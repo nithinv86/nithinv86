@@ -295,7 +295,7 @@ li {
 .social {
   width: 100%;
   position: absolute;
-  top: 66%;
+  top: 70%;
   text-align: center;
   padding: 0;
 }
@@ -727,7 +727,6 @@ li {
   margin-bottom: 1rem;
 }
 .form-group .form-control {
-  border-radius: 0;
   position: absolute;
   z-index: 10;
   resize: none;
@@ -779,12 +778,12 @@ li {
   -o-transition: all 0.3s ease-in-out;
 }
 .btn.primary_btn {
-  background-color: #327de6;
+  background-color: #0856c1;
   color: #fff;
 }
 .btn:hover {
+  background-color: #48b1bf;
   color: #fff;
-  background-color: #0856c1;
 }
 
 .background.gradient {
@@ -890,6 +889,7 @@ li {
 }
 .text-end {
   display: flex;
+  justify-content: flex-end;
   gap: 10px;
 }
 
