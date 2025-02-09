@@ -1,20 +1,20 @@
 stages:
   - deploy
 
-before_script:
-  - apt-get update -y && apt-get install openssh-client -y && apt-get install -y rsync
-  - eval $(ssh-agent -s)
-  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-  - mkdir -p ~/.ssh
-  - chmod 700 ~/.ssh
-  - ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
-
 deploy:
   stage: deploy
   only:
     - master
   script:
     - echo "Start deploying..."
+    - 'which ssh-agent || (apt-get update -y && apt-get install openssh-client -y)'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - echo "Start pulling latest code..."
     - ssh "$SSH_USER@$SSH_HOST" -C "
       cd "$SSH_PATH";
       git pull origin master;"
