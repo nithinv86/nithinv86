@@ -27,3 +27,5 @@ const scrollHandler = () => {
 
 cardDetails.addEventListener('scroll', scrollHandler);
 mainContainer.addEventListener('scroll', scrollHandler);
+
+document.getElementById('dob').innerHTML = new Date().getFullYear() - 1986;
